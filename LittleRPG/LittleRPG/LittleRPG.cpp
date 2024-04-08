@@ -6,10 +6,33 @@
 #include <SFML/Graphics.hpp>
 
 using namespace std;
+
+class Unit
+{
+    private:
+        string name;
+        int level;
+
+    public:
+        Unit()
+        {
+            this->name = "Hello";
+            this->level = 10;
+            cout << this->name << this->level << endl;
+        }
+
+
+};
+
+class Player : public Unit
+{
+
+};
+
 class Game
 {
     public:
-
+        Game(){}
 
     private:
         int a;
@@ -18,6 +41,8 @@ class Game
 int main()
 {
     cout << "console output " << endl;
+    Unit unit;
+
     sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
