@@ -9,7 +9,7 @@ using namespace std;
 
 class Unit
 {
-    private:
+    protected:
         string name;
         int level;
 
@@ -21,7 +21,27 @@ class Unit
             cout << this->name << this->level << endl;
         }
 
+        string getName()
+        {
+            return this->name;
+        }
 
+        int getLevel()
+        {
+            return this->level;
+        }
+
+
+};
+
+class Tibetfox : public Unit
+{
+public:
+    Tibetfox()
+    {
+        this->name = "korean tibet fox";
+        this->level = 999999;
+    }
 };
 
 class Player : public Unit
@@ -40,8 +60,10 @@ class Game
 
 int main()
 {
-    cout << "console output " << endl;
+    
     Unit unit;
+    Tibetfox* tibetPointer = new Tibetfox();
+    cout << tibetPointer->getLevel() << "레벨 고인물 : " << tibetPointer->getName() << endl;
 
     sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
     sf::CircleShape shape(100.f);
