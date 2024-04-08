@@ -1,6 +1,5 @@
 # TRPG
 Make TRPG base on dice probability
-With D&D Rule
 (C++)
 
 #Patch Note
