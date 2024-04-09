@@ -9,3 +9,4 @@ Make TRPG base on dice probability
 
 ----------------------------------------2024-04-09----------------------------------------
 1. MS - SFML project upload
+2. JW - README 파일에 의견 제시 (속성 추가)
