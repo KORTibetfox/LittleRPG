@@ -10,7 +10,7 @@
 
 using namespace std;
 
-//Game Manager : Singleton ?„ë¡œê·¸ë¨?ì„œ ???˜ë‚˜ë§?ì¡´ì¬
+//Game Manager : Singleton Pattern
 class Game
 {
 private:
@@ -76,7 +76,7 @@ public:
 
 	static void diceMessage()
 	{
-		cout << "?„ë¬´ ?¤ë‚˜ ?ŒëŸ¬ ì£¼ì‚¬?„ë? ?˜ì??¸ìš”." <<endl;
+		cout << "Try Roll The Dice!!" <<endl;
 	}
 };
 
@@ -84,7 +84,7 @@ class Battle
 {
 private:
 
-	void setFirstAttacker(Unit* player, Unit* mob) // ? ê³µê¶??•í•˜ê¸?
+	void setFirstAttacker(Unit* player, Unit* mob) // Choice Who first attack
 	{
 		Interface::diceMessage();
 		Interface::WAIT();
@@ -94,7 +94,7 @@ private:
 		int player_result = Dice::rolltheDice(20);
 		int mob_result = Dice::rolltheDice(20);
 
-		cout << "Your dice : " << player_result << " Mob dice : " << mob_result << endl;
+		cout << "Your dice : " << player_result << " And Mob dice : " << mob_result << endl;
 
 		if (player_result >= mob_result) {
 			cout << "Your Turn!" << endl;
@@ -109,7 +109,7 @@ private:
 
 	bool isDead(Unit* unit)
 	{
-		if (unit->getData()->cur_hp <= 0)
+		if (unit->getData().cur_hp <= 0)
 		{
 		cout << "Unit is Dead" << endl;
 		return true;
@@ -117,9 +117,8 @@ private:
 		return false;
 	}
 
-	void executeAttack(Unit* attacker, Unit* defender) // ?°ë?ì§€ë¥?ì£¼ëŠ” ê³¼ì •
+	void executeAttack(Unit* attacker, Unit* defender) 
 	{
-		// ê³µê²© ?°ë?ì§€ ?¤ì •
 		Interface::diceMessage();
 		Interface::WAIT();
 
@@ -127,20 +126,17 @@ private:
 		int defense_chance = Dice::rolltheDice(20);
 		cout << "Damage : " <<attack_damage << endl;
 
-		// ê³µê²© (ì²´ë ¥ ê°ì†Œ)
 		if (attack_damage > defense_chance) {
-			defender->getData()->cur_hp -= attack_damage;
-			//?¬ë§??ë°œìƒ ??ë°°í? ì¢…ë£Œ
+			defender->setCurHp(attack_damage);
 			if(this->isDead(defender)) return;
 		}
-		// ?Œí”¼
 		
-		cout << "Atk HP : " << attacker->getData()->cur_hp << "Def HP" << defender->getData()->cur_hp << endl;
-		//???˜ê¸°ê¸?
+		cout << "Atk HP : " << attacker->getData().cur_hp << "Def HP" << defender->getData().cur_hp << endl;
 		this->exchangeTurn(attacker, defender);
 	}
 
-	void exchangeTurn(Unit* attacker, Unit* defender) { // ?´ë„˜ê¸°ê¸°
+	void exchangeTurn(Unit* attacker, Unit* defender) // You are fool if you can't understand this
+	{
 
 		cout << "change" << endl;
 		Unit* temp;

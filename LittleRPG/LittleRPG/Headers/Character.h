@@ -14,6 +14,8 @@ protected:
 
 public:
 
+	Character(){}
+
 	string getClassName() { return this->class_name; }
 
 	virtual ~Character() {}
