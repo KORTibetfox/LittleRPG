@@ -10,14 +10,14 @@ typedef struct Data
 
 	short int level;
 	short int exp;
-	short int cur_hp; // ÇöÀç Ã¼·Â
-	short int max_hp; // ÃÖ´ë Ã¼·Â
+	short int cur_hp; // í˜„ìž¬ ì²´ë ¥
+	short int max_hp; // ìµœëŒ€ ì²´ë ¥
 
-	short int str; // ±Ù·Â
-	short int dex; // ¹ÎÃ¸
-	short int vit; // ¹æ¾î
+	short int str; // ê·¼ë ¥
+	short int dex; // ë¯¼ì²©
+	short int vit; // ë°©ì–´
 
-	short int preemptive; //¼±°ø±Ç
+	short int preemptive; //ì„ ê³µê¶Œ
 
 }Data;
 
@@ -31,7 +31,7 @@ protected:
 public:
 	Unit() 
 	{
-		//±âº» À¯´Ö
+		//ê¸°ë³¸ ìœ ë‹›
 		data->level = 1;
 		data->exp = 0;
 		data->cur_hp = 10;
@@ -65,7 +65,7 @@ public:
 class Mob : public Unit
 {
 public:
-	// ½ºÅ³ ¾ø´Â ³ë¸Ö À¯´Ö »ý¼º
+	// ìŠ¤í‚¬ ì—†ëŠ” ë…¸ë©€ ìœ ë‹› ìƒì„±
 	Mob(string name, int level, int max_hp, int str, int dex, int vit)
 	{
 		data->name = name;
