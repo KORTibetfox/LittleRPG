@@ -26,7 +26,7 @@ public:
 
 	Warrior()
 	{
-		this->class_name = "ภüป็";	
+		this->class_name = "ร€รผยปรง";	
 	}
 
 };
@@ -35,7 +35,7 @@ class Wizard : public Character {
 
 public:
 	Wizard() {
-		this->class_name = "ธถนýป็";
+		this->class_name = "ยธยถยนรฝยปรง";
 	}
 
 };
@@ -44,6 +44,6 @@ class Archer : public Character {
 
 public:
 	Archer() {
-		this->class_name = "ฑรผ๖";
+		this->class_name = "ยฑรยผรถ";
 	}
 };
