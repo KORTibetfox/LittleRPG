@@ -2,7 +2,8 @@
 
 #include <iostream>
 #include <random>
-#include "Headers/Unit.h"
+#include "Unit.h"
+#include "Graphics.h"
 
 //temp library
 #include <conio.h>
@@ -80,12 +81,24 @@ public:
 	}
 };
 
+
+class Graphics {
+public:
+
+	static void showBattleScene(Player* player, Mob* mob)
+	{
+		printf("[ Player ] hp : %d  / %d\n", player->getData().cur_hp, player->getData().max_hp);
+		printf("[   Mob  ] hp : %d  / %d\n", mob->getData().cur_hp, mob->getData().max_hp);
+	}
+};
+
 class Battle
 {
 private:
 
-	void setFirstAttacker(Unit* player, Unit* mob) // Choice Who first attack
+	void setFirstAttacker(Player* player, Mob* mob) // Choice Who first attack
 	{
+		Graphics::showBattleScene(player, mob);
 		Interface::diceMessage();
 		Interface::WAIT();
 
@@ -98,12 +111,12 @@ private:
 
 		if (player_result >= mob_result) {
 			cout << "Your Turn!" << endl;
-			this->executeAttack(player, mob);
+			this->executeAttack(player, mob, player, mob);
 		}
 		else if (player_result < mob_result) {
 
 			cout << "Mob Turn!" << endl;
-			this->executeAttack(mob, player);
+			this->executeAttack(mob, player, player, mob);
 		}
 	}
 
@@ -117,8 +130,9 @@ private:
 		return false;
 	}
 
-	void executeAttack(Unit* attacker, Unit* defender) 
+	void executeAttack(Unit* attacker, Unit* defender, Player* player, Mob* mob)
 	{
+		Graphics::showBattleScene(player, mob);
 		Interface::diceMessage();
 		Interface::WAIT();
 
@@ -131,11 +145,11 @@ private:
 			if(this->isDead(defender)) return;
 		}
 		
-		cout << "Atk HP : " << attacker->getData().cur_hp << "Def HP" << defender->getData().cur_hp << endl;
-		this->exchangeTurn(attacker, defender);
+		cout << "Atk HP : " << attacker->getData().cur_hp << "\tDef's HP" << defender->getData().cur_hp << endl;
+		this->exchangeTurn(attacker, defender, player, mob);
 	}
 
-	void exchangeTurn(Unit* attacker, Unit* defender) // You are fool if you can't understand this
+	void exchangeTurn(Unit* attacker, Unit* defender, Player* player, Mob* mob) // You are fool if you can't understand this
 	{
 
 		cout << "change" << endl;
@@ -144,18 +158,16 @@ private:
 		attacker = defender;
 		defender = temp;
 
-		this->executeAttack(attacker, defender);
+		this->executeAttack(attacker, defender, player, mob);
 	}
 
 public:
 
-	Battle(Unit* player, Unit* mob)
+	Battle(Player* player, Mob* mob)
 	{
-		cout << "Battle Start !" <<endl;
-		this->setFirstAttacker(player,mob);
+		this->setFirstAttacker(player, mob);
 	}
 };
-
 
 
 

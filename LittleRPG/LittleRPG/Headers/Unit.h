@@ -33,12 +33,12 @@ public:
 	{
 		// All Units must have below indexes
 		this->data.level = 1;
-		data.exp = 0;
-		data.cur_hp = 100;
-		data.max_hp = 100;
-		data.str = 8;
-		data.dex = 8;
-		data.vit = 8;
+		this->data.exp = 0;
+		this->data.cur_hp = 100;
+		this->data.max_hp = 100;
+		this->data.str = 8;
+		this->data.dex = 8;
+		this->data.vit = 8;
 	}
 
 	virtual ~Unit() {}
@@ -70,11 +70,11 @@ public:
 	// Common enemy
 	Mob(string name, int level, int max_hp, int str, int dex, int vit) : Unit()
 	{
-		data.name = name;
-		data.level = level;
-		data.max_hp = max_hp;
-		data.str = str;
-		data.dex = dex;
-		data.vit = vit;
+		this->data.name = name;
+		this->data.level = level;
+		this->data.cur_hp = this->data.max_hp = max_hp;
+		this->data.str = str;
+		this->data.dex = dex;
+		this->data.vit = vit;
 	}
 };

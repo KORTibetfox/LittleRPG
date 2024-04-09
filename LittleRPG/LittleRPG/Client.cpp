@@ -3,6 +3,7 @@
 #include "Headers/Unit.h"
 #include "Headers/Game.h"
 #include "Headers/Character.h"
+#include "Headers/Graphics.h"
 
 int main()
 {
@@ -11,9 +12,8 @@ int main()
 	Wizard* w = new Wizard();
 	cout << p->getData().name << endl;
 
-	Mob* m = new Mob("slime",5,20,8,8,8);
+	Mob* m = new Mob("slime", 5, 80, 8, 8, 8);
 	Battle bat(p,m);
 
 	return 0;
-
 }
