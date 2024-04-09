@@ -8,16 +8,16 @@ typedef struct Data
 {
 	string name;
 
-	short int level;
+	short int level; 
 	short int exp;
-	short int cur_hp; // 현재 체력
-	short int max_hp; // 최대 체력
+	short int cur_hp; // current hp
+	short int max_hp; 
 
-	short int str; // 근력
-	short int dex; // 민첩
-	short int vit; // 방어
+	short int str; // Strength
+	short int dex; // Dexterity
+	short int vit; // Vitality
 
-	short int preemptive; //선공권
+	short int preemptive; // who first punch shit boy 
 
 }Data;
 
@@ -31,7 +31,7 @@ protected:
 public:
 	Unit() 
 	{
-		//기본 유닛
+		// All Units must have below indexes
 		data->level = 1;
 		data->exp = 0;
 		data->cur_hp = 10;
@@ -65,7 +65,7 @@ public:
 class Mob : public Unit
 {
 public:
-	// 스킬 없는 노멀 유닛 생성
+	// Common enemy
 	Mob(string name, int level, int max_hp, int str, int dex, int vit)
 	{
 		data->name = name;

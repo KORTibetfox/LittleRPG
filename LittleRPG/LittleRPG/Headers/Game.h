@@ -10,7 +10,7 @@
 
 using namespace std;
 
-//Game Manager : Singleton 프로그램에서 단 하나만 존재
+//Game Manager : Singleton ?�로그램?�서 ???�나�?존재
 class Game
 {
 private:
@@ -76,7 +76,7 @@ public:
 
 	static void diceMessage()
 	{
-		cout << "아무 키나 눌러 주사위를 던지세요." <<endl;
+		cout << "?�무 ?�나 ?�러 주사?��? ?��??�요." <<endl;
 	}
 };
 
@@ -84,25 +84,25 @@ class Battle
 {
 private:
 
-	void setFirstAttacker(Unit* player, Unit* mob) // 선공권 정하기
+	void setFirstAttacker(Unit* player, Unit* mob) // ?�공�??�하�?
 	{
 		Interface::diceMessage();
 		Interface::WAIT();
 
-		cout << "왜안떠!" <<endl;
+		cout << "* select first attacker" <<endl;
 
 		int player_result = Dice::rolltheDice(20);
 		int mob_result = Dice::rolltheDice(20);
 
-		cout << "당신의 수 : " << player_result << " 몹 수 : " << mob_result << endl;
+		cout << "Your dice : " << player_result << " Mob dice : " << mob_result << endl;
 
 		if (player_result >= mob_result) {
-			cout << "당신이 먼저 공격합니다!" << endl;
+			cout << "Your Turn!" << endl;
 			this->executeAttack(player, mob);
 		}
 		else if (player_result < mob_result) {
 
-			cout << "상대가 먼저 공격합니다!" << endl;
+			cout << "Mob Turn!" << endl;
 			this->executeAttack(mob, player);
 		}
 	}
@@ -111,40 +111,38 @@ private:
 	{
 		if (unit->getData()->cur_hp <= 0)
 		{
-		cout << "유닛이 사망했습니다." << endl;
+		cout << "Unit is Dead" << endl;
 		return true;
 		}
 		return false;
 	}
 
-	void executeAttack(Unit* attacker, Unit* defender) // 데미지를 주는 과정
+	void executeAttack(Unit* attacker, Unit* defender) // ?��?지�?주는 과정
 	{
-		// 공격 데미지 설정
+		// 공격 ?��?지 ?�정
 		Interface::diceMessage();
 		Interface::WAIT();
 
 		int attack_damage = Dice::rolltheDice(2, 20);
 		int defense_chance = Dice::rolltheDice(20);
-		cout << "주사위 결과 : " <<attack_damage << endl;
+		cout << "Damage : " <<attack_damage << endl;
 
 		// 공격 (체력 감소)
 		if (attack_damage > defense_chance) {
 			defender->getData()->cur_hp -= attack_damage;
-			//사망자 발생 시 배틀 종료
+			//?�망??발생 ??배�? 종료
 			if(this->isDead(defender)) return;
 		}
-		// 회피
-		else
-			;
-
-		cout << "공격한 새기 체력 : " << attacker->getData()->cur_hp << "수비한 새기 체력" << defender->getData()->cur_hp << endl;
-		//턴 넘기기
+		// ?�피
+		
+		cout << "Atk HP : " << attacker->getData()->cur_hp << "Def HP" << defender->getData()->cur_hp << endl;
+		//???�기�?
 		this->exchangeTurn(attacker, defender);
 	}
 
-	void exchangeTurn(Unit* attacker, Unit* defender) { // 턴넘기기
+	void exchangeTurn(Unit* attacker, Unit* defender) { // ?�넘기기
 
-		cout << "턴을 넘깁니다." << endl;
+		cout << "change" << endl;
 		Unit* temp;
 		temp = attacker;
 		attacker = defender;
