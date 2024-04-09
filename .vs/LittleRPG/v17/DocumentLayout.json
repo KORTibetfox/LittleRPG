@@ -1,12 +1,12 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Jaewon\\Source\\Repos\\LittleRPG\\",
+  "WorkspaceRootPath": "C:\\Users\\Jaewon\\source\\repos\\LittleRPG\\",
   "Documents": [
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jaewon\\source\\repos\\KORTibetfox\\LittleRPG\\LittleRPG\\LittleRPG\\LittleRPG.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jaewon\\Source\\Repos\\LittleRPG\\Balance\\\uC18D\uC131 \uADDC\uCE59||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jaewon\\source\\repos\\LittleRPG\\Balance\\\uC18D\uC131 \uADDC\uCE59||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Balance\\\uC18D\uC131 \uADDC\uCE59||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
@@ -63,9 +63,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "LittleRPG.cpp",
-              "DocumentMoniker": "C:\\Users\\Jaewon\\Source\\Repos\\KORTibetfox\\LittleRPG\\LittleRPG\\LittleRPG\\LittleRPG.cpp",
+              "DocumentMoniker": "C:\\Users\\Jaewon\\source\\repos\\KORTibetfox\\LittleRPG\\LittleRPG\\LittleRPG\\LittleRPG.cpp",
               "RelativeDocumentMoniker": "..\\KORTibetfox\\LittleRPG\\LittleRPG\\LittleRPG\\LittleRPG.cpp",
-              "ToolTip": "C:\\Users\\Jaewon\\Source\\Repos\\KORTibetfox\\LittleRPG\\LittleRPG\\LittleRPG\\LittleRPG.cpp",
+              "ToolTip": "C:\\Users\\Jaewon\\source\\repos\\KORTibetfox\\LittleRPG\\LittleRPG\\LittleRPG\\LittleRPG.cpp",
               "RelativeToolTip": "..\\KORTibetfox\\LittleRPG\\LittleRPG\\LittleRPG\\LittleRPG.cpp",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-09T02:28:37.19Z"
@@ -74,9 +74,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "\uC18D\uC131 \uADDC\uCE59",
-              "DocumentMoniker": "C:\\Users\\Jaewon\\Source\\Repos\\LittleRPG\\Balance\\\uC18D\uC131 \uADDC\uCE59",
+              "DocumentMoniker": "C:\\Users\\Jaewon\\source\\repos\\LittleRPG\\Balance\\\uC18D\uC131 \uADDC\uCE59",
               "RelativeDocumentMoniker": "Balance\\\uC18D\uC131 \uADDC\uCE59",
-              "ToolTip": "C:\\Users\\Jaewon\\Source\\Repos\\LittleRPG\\Balance\\\uC18D\uC131 \uADDC\uCE59",
+              "ToolTip": "C:\\Users\\Jaewon\\source\\repos\\LittleRPG\\Balance\\\uC18D\uC131 \uADDC\uCE59",
               "RelativeToolTip": "Balance\\\uC18D\uC131 \uADDC\uCE59",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",

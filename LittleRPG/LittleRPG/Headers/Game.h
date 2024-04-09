@@ -145,7 +145,7 @@ private:
 			if(this->isDead(defender)) return;
 		}
 		
-		cout << "Atk HP : " << attacker->getData().cur_hp << "\tDef's HP" << defender->getData().cur_hp << endl;
+		cout << "Atk's HP : " << attacker->getData().cur_hp << "\tDef's HP : " << defender->getData().cur_hp << endl;
 		this->exchangeTurn(attacker, defender, player, mob);
 	}
 
