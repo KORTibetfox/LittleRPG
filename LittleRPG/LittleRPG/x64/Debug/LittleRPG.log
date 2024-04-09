@@ -1,2 +1,2 @@
 ﻿  Client.cpp
-  LittleRPG.vcxproj -> C:\Users\Jaewon\Source\Repos\KORTibetfox\LittleRPG\LittleRPG\x64\Debug\LittleRPG.exe
+C:\Users\Jaewon\source\repos\LittleRPG\A\LittleRPG\LittleRPG\Client.cpp(52,27): error C2061: 구문 오류: 식별자 'mob'

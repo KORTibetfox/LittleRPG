@@ -17,6 +17,8 @@ typedef struct Data
 	short int dex; // ¹ÎÃ¸
 	short int vit; // ¹æ¾î
 
+	short int preemptive; //¼±°ø±Ç
+
 }Data;
 
 class Unit
@@ -32,11 +34,18 @@ public:
 		//±âº» À¯´Ö
 		data->level = 1;
 		data->exp = 0;
-		data->cur_hp = 0;
+		data->cur_hp = 10;
 		data->max_hp = 10;
 		data->str = 8;
 		data->dex = 8;
 		data->vit = 8;
+	}
+
+	virtual ~Unit() {}
+
+	Data* getData()
+	{
+		return data;
 	}
 };
 
@@ -45,11 +54,11 @@ class Player : public Unit
 public:
 	Player() 
 	{ 
-	this->data->name = "Zeus"; 
-	//stats
-	this->data->str = 8;
-	this->data->dex = 8;
-	this->data->vit = 8;
+		this->data->name = "Zeus"; 
+		//stats
+		this->data->str = 8;
+		this->data->dex = 8;
+		this->data->vit = 8;
 	}
 };
 
@@ -57,8 +66,9 @@ class Mob : public Unit
 {
 public:
 	// ½ºÅ³ ¾ø´Â ³ë¸Ö À¯´Ö »ı¼º
-	Mob(int level, int max_hp, int str, int dex, int vit)
+	Mob(string name, int level, int max_hp, int str, int dex, int vit)
 	{
+		data->name = name;
 		data->level = level;
 		data->max_hp = max_hp;
 		data->str = str;

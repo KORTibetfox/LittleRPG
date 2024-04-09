@@ -11,13 +11,18 @@ private:
 
 protected:
 	string class_name;
-	int skill_point;
+
 public:
 
-	virtual ~Character() {};
+	string getClassName() { return this->class_name; }
+
+	virtual ~Character() {}
+
 };
 
 class Warrior : public Character {
+
+public:
 
 	Warrior()
 	{
@@ -28,6 +33,7 @@ class Warrior : public Character {
 
 class Wizard : public Character {
 
+public:
 	Wizard() {
 		this->class_name = "¸¶¹ý»ç";
 	}
@@ -36,6 +42,7 @@ class Wizard : public Character {
 
 class Archer : public Character {
 
+public:
 	Archer() {
 		this->class_name = "±Ã¼ö";
 	}
