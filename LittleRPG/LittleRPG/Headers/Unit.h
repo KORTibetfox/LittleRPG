@@ -31,12 +31,11 @@ protected:
 public:
 	Unit()
 	{
-		cout << "Unit()" << endl;
 		// All Units must have below indexes
 		this->data.level = 1;
 		data.exp = 0;
-		data.cur_hp = 10;
-		data.max_hp = 10;
+		data.cur_hp = 100;
+		data.max_hp = 100;
 		data.str = 8;
 		data.dex = 8;
 		data.vit = 8;
@@ -57,7 +56,6 @@ class Player : public Unit
 public:
 	Player() : Unit()
 	{
-		cout << "Player()" << endl;
 		this->data.name = "Zeus";
 		//stats
 		this->data.str = 8;

@@ -14,4 +14,6 @@ int main()
 	Mob* m = new Mob("slime",5,20,8,8,8);
 	Battle bat(p,m);
 
+	return 0;
+
 }
