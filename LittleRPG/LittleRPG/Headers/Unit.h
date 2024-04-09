@@ -17,7 +17,9 @@ typedef struct Data
 	short int dex; // Dexterity
 	short int vit; // Vitality
 
-	short int preemptive; // who first punch shit boy 
+	short int bonus_preemptive; // who first punch shit boy
+	short int bonus_damage;
+	short int bonus_dodge;
 
 }Data;
 
@@ -34,11 +36,12 @@ public:
 		// All Units must have below indexes
 		this->data.level = 1;
 		this->data.exp = 0;
-		this->data.cur_hp = 100;
-		this->data.max_hp = 100;
+		this->data.cur_hp = 200;
+		this->data.max_hp = 200;
 		this->data.str = 8;
 		this->data.dex = 8;
 		this->data.vit = 8;
+		
 	}
 
 	virtual ~Unit() {}
@@ -58,9 +61,13 @@ public:
 	{
 		this->data.name = "Zeus";
 		//stats
-		this->data.str = 8;
+		this->data.str = 10;
 		this->data.dex = 8;
 		this->data.vit = 8;
+
+		this->data.bonus_damage = int(this->data.str / 2);
+		this->data.bonus_preemptive = int(this->data.dex / 2);
+		this->data.bonus_dodge = int(this->data.vit / 2);
 	}
 };
 
@@ -76,5 +83,9 @@ public:
 		this->data.str = str;
 		this->data.dex = dex;
 		this->data.vit = vit;
+
+		this->data.bonus_damage = int(this->data.str / 2);
+		this->data.bonus_preemptive = int(this->data.dex / 2);
+		this->data.bonus_dodge = int(this->data.vit / 2);
 	}
 };

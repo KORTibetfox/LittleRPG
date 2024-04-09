@@ -10,9 +10,9 @@ int main()
 	Player* p = new Player();
 	Unit* u = new Unit();
 	Wizard* w = new Wizard();
-	cout << p->getData().name << endl;
+	//cout << p->getData().name << endl;
 
-	Mob* m = new Mob("slime", 5, 80, 8, 8, 8);
+	Mob* m = new Mob("slime", 3, 200, 16, 8, 10);
 	Battle bat(p,m);
 
 	return 0;
