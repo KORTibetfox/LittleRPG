@@ -10,7 +10,7 @@
 
 using namespace std;
 
-//Game Manager : Singleton ÇÁ·Î±×·¥¿¡¼­ ´Ü ÇÏ³ª¸¸ Á¸Àç
+//Game Manager : Singleton í”„ë¡œê·¸ë¨ì—ì„œ ë‹¨ í•˜ë‚˜ë§Œ ì¡´ì¬
 class Game
 {
 private:
@@ -76,7 +76,7 @@ public:
 
 	static void diceMessage()
 	{
-		cout << "¾Æ¹« Å°³ª ´­·¯ ÁÖ»çÀ§¸¦ ´øÁö¼¼¿ä." <<endl;
+		cout << "ì•„ë¬´ í‚¤ë‚˜ ëˆŒëŸ¬ ì£¼ì‚¬ìœ„ë¥¼ ë˜ì§€ì„¸ìš”." <<endl;
 	}
 };
 
@@ -84,25 +84,25 @@ class Battle
 {
 private:
 
-	void setFirstAttacker(Unit* player, Unit* mob) // ¼±°ø±Ç Á¤ÇÏ±â
+	void setFirstAttacker(Unit* player, Unit* mob) // ì„ ê³µê¶Œ ì •í•˜ê¸°
 	{
 		Interface::diceMessage();
 		Interface::WAIT();
 
-		cout << "¿Ö¾È¶°!" <<endl;
+		cout << "ì™œì•ˆë– !" <<endl;
 
 		int player_result = Dice::rolltheDice(20);
 		int mob_result = Dice::rolltheDice(20);
 
-		cout << "´ç½ÅÀÇ ¼ö : " << player_result << " ¸÷ ¼ö : " << mob_result << endl;
+		cout << "ë‹¹ì‹ ì˜ ìˆ˜ : " << player_result << " ëª¹ ìˆ˜ : " << mob_result << endl;
 
 		if (player_result >= mob_result) {
-			cout << "´ç½ÅÀÌ ¸ÕÀú °ø°İÇÕ´Ï´Ù!" << endl;
+			cout << "ë‹¹ì‹ ì´ ë¨¼ì € ê³µê²©í•©ë‹ˆë‹¤!" << endl;
 			this->executeAttack(player, mob);
 		}
 		else if (player_result < mob_result) {
 
-			cout << "»ó´ë°¡ ¸ÕÀú °ø°İÇÕ´Ï´Ù!" << endl;
+			cout << "ìƒëŒ€ê°€ ë¨¼ì € ê³µê²©í•©ë‹ˆë‹¤!" << endl;
 			this->executeAttack(mob, player);
 		}
 	}
@@ -111,40 +111,40 @@ private:
 	{
 		if (unit->getData()->cur_hp <= 0)
 		{
-		cout << "À¯´ÖÀÌ »ç¸ÁÇß½À´Ï´Ù." << endl;
+		cout << "ìœ ë‹›ì´ ì‚¬ë§í–ˆìŠµë‹ˆë‹¤." << endl;
 		return true;
 		}
 		return false;
 	}
 
-	void executeAttack(Unit* attacker, Unit* defender) // µ¥¹ÌÁö¸¦ ÁÖ´Â °úÁ¤
+	void executeAttack(Unit* attacker, Unit* defender) // ë°ë¯¸ì§€ë¥¼ ì£¼ëŠ” ê³¼ì •
 	{
-		// °ø°İ µ¥¹ÌÁö ¼³Á¤
+		// ê³µê²© ë°ë¯¸ì§€ ì„¤ì •
 		Interface::diceMessage();
 		Interface::WAIT();
 
 		int attack_damage = Dice::rolltheDice(2, 20);
 		int defense_chance = Dice::rolltheDice(20);
-		cout << "ÁÖ»çÀ§ °á°ú : " <<attack_damage << endl;
+		cout << "ì£¼ì‚¬ìœ„ ê²°ê³¼ : " <<attack_damage << endl;
 
-		// °ø°İ (Ã¼·Â °¨¼Ò)
+		// ê³µê²© (ì²´ë ¥ ê°ì†Œ)
 		if (attack_damage > defense_chance) {
 			defender->getData()->cur_hp -= attack_damage;
-			//»ç¸ÁÀÚ ¹ß»ı ½Ã ¹èÆ² Á¾·á
+			//ì‚¬ë§ì ë°œìƒ ì‹œ ë°°í‹€ ì¢…ë£Œ
 			if(this->isDead(defender)) return;
 		}
-		// È¸ÇÇ
+		// íšŒí”¼
 		else
 			;
 
-		cout << "°ø°İÇÑ »õ±â Ã¼·Â : " << attacker->getData()->cur_hp << "¼öºñÇÑ »õ±â Ã¼·Â" << defender->getData()->cur_hp << endl;
-		//ÅÏ ³Ñ±â±â
+		cout << "ê³µê²©í•œ ìƒˆê¸° ì²´ë ¥ : " << attacker->getData()->cur_hp << "ìˆ˜ë¹„í•œ ìƒˆê¸° ì²´ë ¥" << defender->getData()->cur_hp << endl;
+		//í„´ ë„˜ê¸°ê¸°
 		this->exchangeTurn(attacker, defender);
 	}
 
-	void exchangeTurn(Unit* attacker, Unit* defender) { // ÅÏ³Ñ±â±â
+	void exchangeTurn(Unit* attacker, Unit* defender) { // í„´ë„˜ê¸°ê¸°
 
-		cout << "ÅÏÀ» ³Ñ±é´Ï´Ù." << endl;
+		cout << "í„´ì„ ë„˜ê¹ë‹ˆë‹¤." << endl;
 		Unit* temp;
 		temp = attacker;
 		attacker = defender;
