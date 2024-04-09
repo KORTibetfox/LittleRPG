@@ -1,7 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Balance",
+    "\\LittleRPG",
+    "\\LittleRPG\\Debug",
+    "\\LittleRPG\\LittleRPG",
+    "\\LittleRPG\\LittleRPG\\Debug",
+    "\\LittleRPG\\LittleRPG\\x64"
   ],
-  "SelectedNode": "\\LittleRPG.sln",
+  "SelectedNode": "\\LittleRPG\\LittleRPG.sln",
   "PreviewInSolutionExplorer": false
 }
