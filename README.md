@@ -10,7 +10,8 @@ Make TRPG base on dice probability
 ----------------------------------------2024-04-09----------------------------------------
 1. MS - SFML project upload
 2. JW - README 파일에 의견 제시 (속성 추가)
-3. together - Create Unit.h / Character.h / Game.h
+3. together - Create Unit.h / Character.h / Game.h / Graphics.h
 4. 
 ----------------------------------------2024-04-10----------------------------------------
-5. Implementation Battle ProtoTypes
+1. Implementation Battle ProtoTypes
+2. JW - improve battle and add bonus_str, bonus_dex, bonus_vit
