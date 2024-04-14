@@ -15,11 +15,3 @@ Make TRPG base on dice probability
 ----------------------------------------2024-04-10----------------------------------------
 1. Implementation Battle ProtoTypes
 2. JW - improve battle and add bonus_str, bonus_dex, bonus_vit
-
-----------------------------------------2024-04-11----------------------------------------
-1. MS - Divide header files and CPP files
-2. JW - Making button Class
-3. MS - improve button Class
-
-----------------------------------------2024-04-13----------------------------------------
-1. JW - debug button Class
